@@ -3,11 +3,13 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from "path";
+
 export default {
   clearMocks: true,
   testEnvironment: "jsdom",
   coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
-  moduleDirectories: ["node_modules"],
+  moduleDirectories: ["node_modules","src"],
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
   testMatch: [
     "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
@@ -15,6 +17,11 @@ export default {
     //  "**/?(*.)+(spec|test).[tj]s?(x)"
   ],
   rootDir: "../../",
+  setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+  },
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -56,7 +63,6 @@ export default {
   // An array of file extensions your modules use
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -141,7 +147,7 @@ export default {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

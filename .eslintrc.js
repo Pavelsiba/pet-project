@@ -1,28 +1,40 @@
-export const ESlintConfig = {
+const { off } = require("process");
 
-    env: {
-        browser: true,
-        es2021: true
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: [
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "plugin:i18next/recommended",
+  ],
+
+  globals: {
+    __IS_DEV__: true,
+  },
+
+  overrides: [
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": 'off'
+      }
     },
-    extends: [
-        'plugin:react/recommended',
-        'standard-with-typescript',
-        'plugin:i18next/recommended'
+  ],
+  /* parser:'@typescript-eslint/parser', */
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react", "i18next"],
+  rules: {
+    "i18next/no-literal-string": [
+      "error",
+      { markupOnly: true, ignoreAllAttributes: true },
     ],
-    overrides: [
-    ],
-    /* parser:'@typescript-eslint/parser', */
-    parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module'
-    },
-    plugins: [
-        'react',
-        'i18next'
-    ],
-    rules: {
-        "i18next/no-literal-string": 2
-        /* indent: [2, 4],
+    /* indent: [2, 4],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
@@ -37,5 +49,6 @@ export const ESlintConfig = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off' */
-    }
-}
+  },
+  quotes: ["error", "double"],
+};

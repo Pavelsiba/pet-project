@@ -2,7 +2,7 @@ import { Theme, useTheme } from "App/providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
 import DarkIcon from "shared/assets/icons/theme-dark.svg";
 import LighteIcon from "shared/assets/icons/theme-light.svg";
-import { Button, ThemeButton } from "shared/ui/button/button";
+import { Button, ThemeButton } from "shared/ui/button/Button";
 import DarkMode from "shared/assets/icons/dark.svg"
 import LightMode from "shared/assets/icons/light.svg"
 
