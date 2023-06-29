@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react'
+import 'loki/configure-react'
 import 'app/styles/index.scss'
 import { ThemeDecorator } from '../../src/shared/config/storybook/themeDecorator/ThemeDecorator'
 import { Theme } from '../../src/app/providers/ThemeProvider'
