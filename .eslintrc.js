@@ -3,43 +3,77 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ["plugin:react/recommended", "standard-with-typescript", "plugin:i18next/recommended", "plugin:storybook/recommended"],
+  extends: [
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended'
+  ],
   globals: {
     __IS_DEV__: true
   },
-  overrides: [{
-    files: ["**/src/**/*.test.{ts,tsx}"],
-    rules: {
-      "i18next/no-literal-string": 'off'
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
     }
-  }],
-  /* parser:'@typescript-eslint/parser', */
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module"
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    tsconfigRootDir: __dirname,
+    project: true
   },
-  plugins: ["react", "i18next"],
+  plugins: ['react', 'i18next', '@typescript-eslint'],
   rules: {
-    "i18next/no-literal-string": ["error", {
-      markupOnly: true,
-      ignoreAllAttributes: true
-    }]
-    /* indent: [2, 4],
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
-        'import/no-unresolved': 'off',
-        'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
-        'react/require-default-props': 'off',
-        'react/react-in-jsx-scope': 'off',
-        'react/jsx-props-no-spreading': 'warn',
-        'react/function-component-definition': 'off',
-        'no-shadow': 'off',
-        'import/extensions': 'off',
-        'import/no-extraneous-dependencies': 'off',
-        'no-underscore-dangle': 'off' */
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAllAttributes: true
+      }
+    ],
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'warn',
+    '@typescript-eslint/prefer-nullish-coalescing': 'warn',
+    '@typescript-eslint/no-misused-promises': [
+      'warn',
+      {
+        checksConditionals: false
+      }
+    ],
+    '@typescript-eslint/naming-convention': 'off', /* [
+      'warn',
+      {
+        selector: 'variable',
+        format: ['camelCase', 'UPPER_CASE', 'PascalCase']
+      }
+    ] */
+    'react/prop-types': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    indent: [2, 2],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+    'no-unused-vars': 'warn',
+    'react/require-default-props': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-props-no-spreading': ['warn',
+      {
+        html: 'ignore',
+        exceptions: ['Link']
+      }],
+    'react/function-component-definition': 'off',
+    'no-shadow': 'off',
+    'no-underscore-dangle': 'off'
   },
-
-  quotes: ["error", "double"]
-};
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  }
+}

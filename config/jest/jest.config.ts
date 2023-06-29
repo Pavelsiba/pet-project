@@ -3,25 +3,25 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from "path";
+import path from 'path'
 
 export default {
   clearMocks: true,
-  testEnvironment: "jsdom",
-  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
-  moduleDirectories: ["node_modules","src"],
-  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
+  testEnvironment: 'jsdom',
+  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+  moduleDirectories: ['node_modules', 'src'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   testMatch: [
-    "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
+    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
     //  "**/__tests__/**/*.[jt]s?(x)",
     //  "**/?(*.)+(spec|test).[tj]s?(x)"
   ],
-  rootDir: "../../",
+  rootDir: '../../',
   setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
-  },
+  }
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -148,7 +148,6 @@ export default {
 
   // A map from regular expressions to paths to transformers
 
-
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
   //   "\\\\node_modules\\\\",
@@ -166,4 +165,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
