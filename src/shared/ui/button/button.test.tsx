@@ -12,4 +12,10 @@ describe('Button', () => {
     expect(screen.getByText('TEST')).toHaveClass('clear')
     screen.debug()
   })
+
+  test('test outline theme', () => {
+    render(<Button theme={ThemeButton.OUTLINE}>TEST</Button>)
+    expect(screen.getByText('TEST')).toHaveClass('outline')
+    screen.debug()
+  })
 })

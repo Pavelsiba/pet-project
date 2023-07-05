@@ -1,5 +1,5 @@
 import { type BuildPaths } from './../build/types/config'
-/* import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin' */
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 import type { StorybookConfig } from '@storybook/react-webpack5'
 import type { Configuration, RuleSetRule } from 'webpack'
 import path from 'path'
@@ -30,7 +30,7 @@ const config: StorybookConfig = {
     if ((config.module?.rules) != null) {
       config.module.rules = config.module?.rules?.map(
         (rule: RuleSetRule | '...') => {
-          if (rule !== '...' && (rule.test as string).includes('svg')) {
+          if (rule !== '...' && (rule?.test?.toString().includes('svg'))) {
             return { ...rule, exclude: /\.svg$/i }
           }
           return rule
@@ -43,10 +43,8 @@ const config: StorybookConfig = {
     }
     config.module?.rules?.push(buildCssLoader(true))
 
-    /*  new TsconfigPathsPlugin({
-      extensions: config.resolve?.extensions
-    }) */
-    config.resolve?.extensions?.push('.ts', '.tsx')
+    new TsconfigPathsPlugin({extensions: config.resolve?.extensions})  /* eslint-disable-line */
+    /* config.resolve?.extensions?.push('.ts', '.tsx') */
 
     return config
   }
