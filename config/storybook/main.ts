@@ -1,4 +1,4 @@
-import { type BuildPaths } from './../build/types/config'
+import { type BuildPaths } from '../build/types/config'
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 import type { StorybookConfig } from '@storybook/react-webpack5'
 import type { Configuration, RuleSetRule } from 'webpack'
