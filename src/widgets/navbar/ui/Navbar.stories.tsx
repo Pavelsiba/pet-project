@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Navbar } from './Navbar'
+import { Navbar } from './navbar'
 import { ThemeDecorator } from 'shared/config/storybook/themeDecorator/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
 

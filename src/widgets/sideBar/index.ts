@@ -1,1 +1,1 @@
-export { Sidebar } from './ui/sideBar/Sidebar'
+export { Sidebar } from './ui/sideBar/sideBar'
