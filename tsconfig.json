@@ -22,9 +22,9 @@
     }
   },
   "include": [
-    "./config/jest/jest-setup.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
+    "./config",
+    "**/*.ts",
+    "**/*.tsx",
     ".eslintrc.js"
   ]
 }
