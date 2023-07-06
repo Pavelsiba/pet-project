@@ -11,7 +11,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": false,
-    "baseUrl": ".",
     "strictBindCallApply": true,
     "paths": {
       "*":["./src/*"]
@@ -24,8 +23,8 @@
   },
   "include": [
     "./config/jest/jest-setup.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
     ".eslintrc.js"
   ]
 }
