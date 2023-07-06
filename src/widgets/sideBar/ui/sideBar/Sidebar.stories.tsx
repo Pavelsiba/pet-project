@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Sidebar } from './Sidebar'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/themeDecorator/ThemeDecorator'
+import { Sidebar } from './sideBar'
 
 const meta = {
-  title: 'widgets/Sidebar',
+  title: 'widgets/sideBar',
   component: Sidebar
 
 } satisfies Meta<typeof Sidebar>
