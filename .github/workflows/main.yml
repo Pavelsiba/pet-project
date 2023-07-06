@@ -2,9 +2,9 @@ name: linting, testing, building
 run-name: ${{ github.actor }} ci settings 🚀
 on:
   push:
-    branches: ["fix_"]
+    branches: ["main"]
   pull_request:
-    branches: ["fix_"]
+    branches: ["main"]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
