@@ -1,5 +1,5 @@
 name: linting, testing, building
-run-name: ${{ github.actor }} ci settings 🚀
+run-name: ${{ github.actor }} ci workflow 🚀
 on:
   push:
     branches: ["main"]
