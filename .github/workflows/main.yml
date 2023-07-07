@@ -24,3 +24,5 @@ jobs:
     - run:  npm run lint:ts
     - run:  npm run lint:scss
     - run:  npm run test:unit
+    - name: Lost Pixel
+      uses: lost-pixel/lost-pixel@v3.4.0
