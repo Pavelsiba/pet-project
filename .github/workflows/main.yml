@@ -19,10 +19,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }} 
-    - name: Lost Pixel
-      uses: lost-pixel/lost-pixel@v3.4.0
     - run:  npm ci
     - run:  npm run build:prod
     - run:  npm run lint:ts
     - run:  npm run lint:scss
     - run:  npm run test:unit
+    - name: Lost Pixel
+      uses: lost-pixel/lost-pixel@v3.4.0

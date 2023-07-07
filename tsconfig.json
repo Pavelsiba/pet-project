@@ -26,5 +26,5 @@
     "**/*.ts",
     "**/*.tsx",
     ".eslintrc.js"
-  ]
+, ".github/workflows/lostpixel.config.ts"  ]
 }
