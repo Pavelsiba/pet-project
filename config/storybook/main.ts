@@ -28,13 +28,12 @@ const config: StorybookConfig = {
     }
     config.resolve?.modules?.push(paths.src)
     if ((config.module?.rules) != null) {
-      config.module.rules = config.module?.rules?.map(
-        (rule: RuleSetRule | '...') => {
-          if (rule !== '...' && (rule?.test?.toString().includes('svg'))) {
-            return { ...rule, exclude: /\.svg$/i }
-          }
-          return rule
+      config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+        if (rule.test?.toString().includes('svg')) {
+          return { ...rule, exclude: /\.svg$/i }
         }
+        return rule
+      }
       )
       config.module.rules.push({
         test: /\.svg$/i,
