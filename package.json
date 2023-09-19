@@ -6,7 +6,7 @@
   "cssModules.camelCase": true,
   "scripts": {
     "test:ui": "npx loki test",
-    "test:ui:ci": "build-storybook && loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:ui:ok": "npx loki approve",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "start": "webpack serve --env port=3000",
