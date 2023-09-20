@@ -7,13 +7,12 @@ export enum ButtonTheme {
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted'
-
 }
 
 export enum ButtonSize {
   L = 'size_l',
   M = 'size_m',
-  XL = 'size_xl',
+  XL = 'size_xl'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
