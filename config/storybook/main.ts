@@ -29,7 +29,7 @@ const config: StorybookConfig = {
     config.resolve?.modules?.push(paths.src)
     if ((config.module?.rules) != null) {
       config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
-        if (rule.test?.toString().includes('svg')) {
+        if (rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
           return { ...rule, exclude: /\.svg$/i }
         }
         return rule

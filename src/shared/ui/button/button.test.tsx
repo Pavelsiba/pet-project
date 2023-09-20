@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { Button, ThemeButton } from './button'
+import { Button, ButtonTheme } from './button'
 
 describe('Button', () => {
   test('test render', () => {
@@ -8,13 +8,13 @@ describe('Button', () => {
   })
 
   test('test clear theme', () => {
-    render(<Button theme={ThemeButton.CLEAR}>TEST</Button>)
+    render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>)
     expect(screen.getByText('TEST')).toHaveClass('clear')
     screen.debug()
   })
 
   test('test outline theme', () => {
-    render(<Button theme={ThemeButton.OUTLINE}>TEST</Button>)
+    render(<Button theme={ButtonTheme.OUTLINE}>TEST</Button>)
     expect(screen.getByText('TEST')).toHaveClass('outline')
     screen.debug()
   })
