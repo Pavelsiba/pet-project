@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './button.module.scss'
 
-export enum ButtonTheme{
+export enum ButtonTheme {
   CLEAR = 'clear',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
