@@ -3,8 +3,17 @@ import { Theme, LOCAL_STORAGE_THEME_KEY, ThemeContext } from '../lib/themeContex
 
 const defaultTheme: Theme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT /* eslint-disable-line */
 
-const ThemeProvider: FC = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
+interface ThemeProviderProps {
+  initialTheme?: Theme
+}
+
+const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+  const {
+    children,
+    initialTheme
+  } = props
+
+  const [theme, setTheme] = useState<Theme>(initialTheme ?? defaultTheme)
 
   const defaultProps = useMemo(() => ({
     theme,

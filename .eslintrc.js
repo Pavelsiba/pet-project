@@ -14,9 +14,10 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['**/src/**/*.test.{ts,tsx}'],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
-        'i18next/no-literal-string': 'off'
+        'i18next/no-literal-string': 'off',
+        'max-len': 'off'
       }
     }
   ],
@@ -27,7 +28,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: true
   },
-  plugins: ['react', 'i18next', '@typescript-eslint'],
+  plugins: ['react', 'i18next', '@typescript-eslint', 'react-hooks'],
   rules: {
     'i18next/no-literal-string': [
       'error',
@@ -69,7 +70,9 @@ module.exports = {
       }],
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
   },
   settings: {
     react: {
