@@ -7,10 +7,10 @@ import { Navbar } from 'widgets/navbar'
 import { Sidebar } from 'widgets/sideBar'
 
 const App = () => {
-  const { theme } = useTheme()
+  const { theme = '' } = useTheme()
 
   return (
-    <div className={classNames('app', {}, [theme ?? ''])}>
+    <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
         <div className="content_page">
