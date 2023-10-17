@@ -1,7 +1,11 @@
 {
+  "decrement": "decrement",
+  "increment": "increment",
+  "Войти": "Enter",
   "Главная": "Main",
   "Главная страница": "",
-  "О сайте": "About",
+  "Короткий язык": "En",
+  "О сайте": "About us",
   "Обновить страницу": "Reload page",
   "Перевод": "Translate",
   "Перевожу на главную": "Redirect to main",

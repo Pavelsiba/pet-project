@@ -13,7 +13,10 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = (props) => {
   const { t } = useTranslation()
   const navigate = useNavigate()
 
-  useEffect(() => { setTimeout(() => { navigate('/') }, 3000) }, [])
+  useEffect(() => {
+    const timer = setTimeout(() => { navigate('/') }, 3000)
+    return () => { clearTimeout(timer) }
+  }, [navigate])
 
   return (
     <div className={classNames(cls.not_found_page, {}, [className])}>
