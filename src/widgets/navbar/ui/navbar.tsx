@@ -3,7 +3,7 @@ import cls from './navbar.module.scss'
 import { Button, ButtonTheme } from 'shared/ui/button/button'
 import { useTranslation } from 'react-i18next'
 import { useCallback, useState } from 'react'
-import { LoginModel } from 'features'
+import { LoginModal } from 'features'
 
 interface NavbarProps {
   className?: string
@@ -30,7 +30,7 @@ export const Navbar = ({ className = '' }: NavbarProps) => {
       >
         {t('Войти')}
       </Button>
-      <LoginModel isOpen={isAuthModal} onClose={onCloseModal}/>
+      <LoginModal isOpen={isAuthModal} onClose={onCloseModal}/>
     </div>
   )
 }
