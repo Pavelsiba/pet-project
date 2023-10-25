@@ -25,6 +25,7 @@
     "./config",
     "**/*.ts",
     "**/*.tsx",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "./json-server/index.js"
   ]
 }

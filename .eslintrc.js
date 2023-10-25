@@ -71,6 +71,7 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
+    'react/display-name': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
   },

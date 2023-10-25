@@ -1,6 +1,8 @@
 {
   "decrement": "decrement",
   "increment": "increment",
+  "Введите логин": "Login",
+  "Введите пароль": "Password",
   "Войти": "Enter",
   "Главная": "Main",
   "Главная страница": "Main page",
