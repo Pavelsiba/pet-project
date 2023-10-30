@@ -24,7 +24,7 @@ jobs:
     - name: build production project
       run:  npm run build:prod
       if: always()
-    - name: linting typescript
+    - name: eslint checking
       run:  npm run lint:ts
       if: always()
     - name: linting css
