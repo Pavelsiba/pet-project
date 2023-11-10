@@ -29,7 +29,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
   }, [isOpen])
 
   const closeHandler = useCallback(() => {
-    if (onClose) {
+    if (typeof onClose !== 'undefined') {
       onClose()
     }
   }, [onClose])

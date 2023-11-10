@@ -1,12 +1,22 @@
 {
     "version": "0.2",
     "language": "en",
-    "ignorePaths":  ["node_modules/**"],
-    "dictionaries": ["russian"],
+    "ignorePaths": [
+        "node_modules/**"
+    ],
+    "dictionaries": [
+        "russian"
+    ],
     "dictionaryDefinitions": [
-        {"name": "russian","path": "./russian-wards.txt"}
+        {
+            "name": "russian",
+            "path": "./russian-wards.txt"
+        }
     ],
     "words": [],
     "ignoreWords": [],
-    "import": []
+    "import": [],
+    "enableFiletypes": [
+        "shellscript"
+    ]
 }
