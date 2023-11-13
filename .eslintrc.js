@@ -40,6 +40,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'warn',
     '@typescript-eslint/prefer-nullish-coalescing': 'warn',
+    '@typescript-eslint/no-dynamic-delete': 'off',
     /* '@typescript-eslint/no-floating-promises': { ignoreVoid: true }, */
     '@typescript-eslint/no-misused-promises': [
       'warn',
