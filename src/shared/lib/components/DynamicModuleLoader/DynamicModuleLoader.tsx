@@ -4,7 +4,7 @@ import { useEffect, type FC, type ReactElement } from 'react'
 import { useStore } from 'react-redux'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 
-export type ReducerList = {
+export type ReducersList = {
   [name in StateSchemaKey]?: Reducer
 }
 
@@ -12,7 +12,7 @@ type ReducersListEntry = [StateSchemaKey, Reducer]
 
 interface DynamicModuleLoaderProps {
   children: ReactElement
-  reducers: ReducerList
+  reducers: ReducersList
   removeAfterUnmount: boolean
 }
 

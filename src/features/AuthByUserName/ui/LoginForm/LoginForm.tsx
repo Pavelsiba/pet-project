@@ -8,7 +8,7 @@ import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { DynamicModuleLoader, type ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Input } from 'shared/ui/Input/input'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
@@ -17,14 +17,15 @@ import cls from './LoginForm.module.scss'
 
 export interface LoginFormProps {
   className?: string
+  onSuccess: () => void
 }
 
-const initialReducers: ReducerList = {
+const initialReducers: ReducersList = {
   loginForm: loginReducer
 }
 
 const LoginForm: React.FC<LoginFormProps> = memo((props) => {
-  const { className = '' } = props
+  const { className = '', onSuccess } = props
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const username = useSelector(getLoginUsername)
@@ -40,10 +41,12 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
     dispatch(loginActions.setPassword(value))
   }, [dispatch])
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }))
-      .catch(() => { console.error('Error in login form onLoginClick') })
-  }, [dispatch, username, password])
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }))
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [dispatch, username, password, onSuccess])
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>

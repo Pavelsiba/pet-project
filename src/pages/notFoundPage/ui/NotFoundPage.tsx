@@ -1,14 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './NotFoundPage.module.scss'
 import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
+import { useEffect, type FC, memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 interface NotFoundPageProps {
   className?: string
 }
 
-export const NotFoundPage: React.FC<NotFoundPageProps> = (props) => {
+export const NotFoundPage: FC<NotFoundPageProps> = memo((props) => {
   const { className = '' } = props
   const { t } = useTranslation()
   const navigate = useNavigate()
@@ -24,4 +24,4 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = (props) => {
       <div>{t('Перевожу на главную')}</div>
     </div>
   )
-}
+})

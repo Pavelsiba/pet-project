@@ -21,16 +21,9 @@ export const Input: FC<InputProps> = memo((props) => {
     ...otherProps
   } = props
 
-  // const [isFocused, setIsFocused] = useState(false)
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value)
   }
-
-  /* useEffect(() => {
-    if (autoFocus) {
-      setIsFocused(true)
-    }
-  }, [autoFocus]) */
 
   return (
     <div className={classNames(cls.inputWrapper, {}, [className])}>
