@@ -29,9 +29,10 @@ const config: StorybookConfig = {
     }
 
     config.resolve?.modules?.push(paths.src)
-    if ((config.module?.rules) != null) {
-      config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
-        if (rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
+
+    if ((config.module?.rules) !== undefined) {
+      config.module.rules = config.module.rules.map((rule: RuleSetRule | '...') => {
+        if (rule !== '...' && rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
           return { ...rule, exclude: /\.svg$/i }
         }
         return rule
@@ -42,10 +43,12 @@ const config: StorybookConfig = {
         use: ['@svgr/webpack']
       })
     }
+
     config.module?.rules?.push(buildCssLoader(true))
 
     config.plugins?.push(new DefinePlugin({
-      __IS_DEV__: true
+      __IS_DEV__: true,
+      __API__: true
     }))
 
     new TsconfigPathsPlugin({extensions: config.resolve?.extensions})  /* eslint-disable-line */

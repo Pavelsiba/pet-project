@@ -10,7 +10,8 @@ module.exports = {
     'plugin:storybook/recommended'
   ],
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: true
   },
   overrides: [
     {
@@ -75,7 +76,8 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'react/display-name': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'no-undef': 'off'
   },
   settings: {
     react: {

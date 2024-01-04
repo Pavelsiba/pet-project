@@ -13,6 +13,7 @@ export default (env: BuildEnv) => {
 
   const mode = env.mode || 'development' // eslint-disable-line
   const PORT = env.port || 3000 // eslint-disable-line
+  const apiUrl = env.apiUrl || 'http://localhost:8000' // eslint-disable-line
   // const analize = env.analize
 
   const isDev = mode === 'development'
@@ -21,7 +22,8 @@ export default (env: BuildEnv) => {
     mode,
     paths,
     isDev,
-    port: PORT
+    port: PORT,
+    apiUrl
   })
 
   return config

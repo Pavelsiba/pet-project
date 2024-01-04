@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
 import { useCallback, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
@@ -14,12 +14,10 @@ interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = (props) => {
-  const { className = '', children, isOpen = false, onClose, lazy = false } = props
+  const { className, children, isOpen = false, onClose, lazy = false } = props
   const { theme = Theme.LIGHT } = useTheme()
   const [isMounted, setIsMounted] = useState(false)
-  const mods: Record<string, boolean> = {
-    [cls.opened]: isOpen
-  }
+  const mods: Mods = { [cls.opened]: isOpen }
 
   useEffect(() => {
     if (isOpen) {

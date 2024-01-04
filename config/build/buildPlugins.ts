@@ -5,7 +5,7 @@ import { type BuildOptions } from './types/config'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInstance[] {
-  const { paths, isDev } = options
+  const { paths, isDev, apiUrl } = options
 
   const plugins = [
     new HtmlWebpackPlugin({
@@ -13,11 +13,12 @@ export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInsta
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css'
+      filename: 'css/[name].[contenthash:5].css',
+      chunkFilename: 'css/[name].[contenthash:5].css'
     }),
     new webpack.DefinePlugin({
-      __IS_DEV__: JSON.stringify(isDev)
+      __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl)
     })]
 
   if (isDev) {
