@@ -23,7 +23,7 @@ describe('updateProfileData.test', () => {
       }
     })
     api.put.mockReturnValue(Promise.resolve({ data }))
-    const result = await callThunk()
+    const result = await callThunk(undefined)
 
     expect(api.put).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('fulfilled')
@@ -38,7 +38,7 @@ describe('updateProfileData.test', () => {
     })
 
     api.put.mockReturnValue(Promise.resolve({ status: 403 }))
-    const result = await callThunk()
+    const result = await callThunk(undefined)
 
     expect(result.meta.requestStatus).toBe('rejected')
     expect(result.payload).toEqual([validateProfileErrors.SERVER_ERROR])
@@ -51,7 +51,7 @@ describe('updateProfileData.test', () => {
     })
 
     api.put.mockReturnValue(Promise.resolve({ status: 403 }))
-    const result = await callThunk()
+    const result = await callThunk(undefined)
 
     expect(result.meta.requestStatus).toBe('rejected')
     expect(result.payload).toEqual([validateProfileErrors.SERVER_ERROR])
@@ -64,7 +64,7 @@ describe('updateProfileData.test', () => {
       }
     })
 
-    const result = await callThunk()
+    const result = await callThunk(undefined)
 
     expect(result.meta.requestStatus).toBe('rejected')
     expect(result.payload).toEqual([validateProfileErrors.INCORRECT_USER_DATA])

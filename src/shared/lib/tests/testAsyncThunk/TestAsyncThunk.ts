@@ -3,7 +3,7 @@ import { type StateSchema } from 'app/providers/StoreProvider'
 import axios, { type AxiosStatic } from 'axios'
 
 type ActionCreatorType<Return, Arg, RejectedValue> = (
-  arg?: Arg
+  arg: Arg
 ) => AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>
 
 jest.mock('axios')
@@ -17,7 +17,7 @@ export function TestAsyncThunk<Return, Arg, RejectedValue> (
   const getState: () => StateSchema = jest.fn(() => state as StateSchema)
   const api: jest.MockedFunctionDeep<AxiosStatic> = mockedAxios
 
-  const callThunk = async (arg?: Arg) => {
+  const callThunk = async (arg: Arg) => {
     const action = actionCreator(arg)
     const result = await action(dispatch, getState, { api })
 
