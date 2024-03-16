@@ -2,5 +2,12 @@
   "Попробуйте обновить страницу": "Try refreshing the page",
   "Произошла ошибка при загрузке профиля": "There was an error loading your profile",
   "Профиль": "Profile",
-  "Редактировать": "Edit"
+  "Редактировать": "Edit",
+  "Данные не получены": "No Data",
+  "Некорректно указан возраст": "Incorrect Age",
+  "Некорректное поле avatar": "Incorrect Avatar",
+  "Серверная ошибка": "Server Error",
+  "Укажите валюту": "Incorrect Currency",
+  "Укажите страну": "Incorrect Country",
+  "Укажите корректные данные пользователя": "Incorrect User Data"
 }
