@@ -4,7 +4,7 @@ import { buildCssLoader } from './loaders/buildcssLoader'
 import { buildBabelLoader } from './loaders/buildBabelLoader'
 import ReactRefreshTypeScript from 'react-refresh-typescript'
 
-export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options
 
   const cssLoader = buildCssLoader(isDev)
@@ -13,16 +13,16 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack'],
+    use: ['@svgr/webpack']
   }
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
       {
-        loader: 'file-loader',
-      },
-    ],
+        loader: 'file-loader'
+      }
+    ]
   }
 
   const typeScriptLoader = {
@@ -33,13 +33,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         loader: require.resolve('ts-loader'),
         options: {
           getCustomTransformers: () => ({
-            before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+            before: [isDev && ReactRefreshTypeScript()].filter(Boolean)
           }),
-          transpileOnly: isDev,
-        },
-      },
-    ],
+          transpileOnly: isDev
+        }
+      }
+    ]
   }
 
-  return [fileLoader, svgLoader, babelLoader,  typeScriptLoader, cssLoader]
+  return [fileLoader, svgLoader, babelLoader, typeScriptLoader, cssLoader]
 }

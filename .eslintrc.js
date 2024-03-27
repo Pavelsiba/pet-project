@@ -14,7 +14,6 @@ module.exports = {
     __API__: true,
     __PROJECT__: true
   },
-  indent: ['error', 4, { 'SwitchCase': 1 }],
   overrides: [
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
@@ -63,7 +62,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
-    indent: [2, 2],
+    indent: [2, 2, { SwitchCase: 1 }],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
     'no-unused-vars': 'warn',
     'react/require-default-props': 'off',
@@ -79,8 +78,7 @@ module.exports = {
     'react/display-name': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
-    'no-undef': 'off',
-    'indent': ['error', 4, { 'SwitchCase': 1 }]
+    'no-undef': 'off'
   },
   settings: {
     react: {

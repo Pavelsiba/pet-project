@@ -4,7 +4,6 @@ import { buildLoaders } from './buildLoaders'
 import { buildResolvers } from './buildResolvers'
 import { type BuildOptions } from './types/config'
 import { buildDevServer } from './buildDevServer'
-import path from 'path'
 
 export function buildWebpackConfig (
   options: BuildOptions

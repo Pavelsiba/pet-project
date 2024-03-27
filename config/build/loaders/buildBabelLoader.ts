@@ -1,6 +1,5 @@
 
-export function buildBabelLoader() {
-
+export function buildBabelLoader () {
   return {
     test: /\.(js|jsx|ts|tsx)$/,
     exclude: /node_modules/,
@@ -15,8 +14,8 @@ export function buildBabelLoader() {
               locales: ['en', 'ru'],
               keyAsDefaultValue: true,
               saveMissing: true,
-              outputPath: 'public/locales/{{locale}}/{{ns}}.json',
-            },
+              outputPath: 'public/locales/{{locale}}/{{ns}}.json'
+            }
           ]
         ]
       }

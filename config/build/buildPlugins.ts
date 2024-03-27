@@ -28,7 +28,6 @@ export function buildPlugins (options: BuildOptions): webpack.WebpackPluginInsta
     plugins.push(new BundleAnalyzerPlugin({
       openAnalyzer: false
     }))
-    
   }
   return plugins
 }
