@@ -14,6 +14,7 @@ module.exports = {
     __API__: true,
     __PROJECT__: true
   },
+  indent: ['error', 4, { 'SwitchCase': 1 }],
   overrides: [
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
@@ -78,7 +79,8 @@ module.exports = {
     'react/display-name': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
-    'no-undef': 'off'
+    'no-undef': 'off',
+    'indent': ['error', 4, { 'SwitchCase': 1 }]
   },
   settings: {
     react: {
