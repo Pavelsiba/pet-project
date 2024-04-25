@@ -1,4 +1,6 @@
 {
+  "ARTICLE DETAILS": "ARTICLE DETAILS",
+  "ARTICLE PAGE": "ARTICLE PAGE",
   "decrement": "decrement",
   "increment": "increment",
   "Аватар": "Avatar",
@@ -39,5 +41,6 @@
   "Укажите корректные данные пользователя": "Please enter correct data",
   "Укажите страну": "Please enter country",
   "Форма Авторизации": "Authorization form",
-  "Язык": "English"
+  "Язык": "English",
+  "какой-то текст": "какой-то текст"
 }

@@ -16,7 +16,8 @@ export function buildWebpackConfig (
     output: {
       filename: '[name].[contenthash].js', // указываем выходной файл нашей сборки [динамически будет изменяться]
       path: paths.build, // папка в которую будут складываться все файлы после сборки
-      clean: true // очищаем ненужные файлы после сборки
+      clean: true, // очищаем ненужные файлы после сборки,
+      publicPath: '/'
     },
     plugins: buildPlugins(options),
     module: {

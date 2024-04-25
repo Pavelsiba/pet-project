@@ -1,7 +1,7 @@
 import { type BuildPaths } from '../build/types/config'
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin'
 import type { StorybookConfig } from '@storybook/react-webpack5'
-import { type Configuration, DefinePlugin, type RuleSetRule } from 'webpack'
+import { type Configuration, DefinePlugin } from 'webpack'
 import path from 'path'
 import { buildCssLoader } from '../build/loaders/buildcssLoader'
 
@@ -30,14 +30,18 @@ const config: StorybookConfig = {
 
     config.resolve?.modules?.push(paths.src)
 
-    if ((config.module?.rules) !== undefined) {
-      config.module.rules = config.module.rules.map((rule: RuleSetRule | '...') => {
-        if (rule !== '...' && rule.test instanceof RegExp && rule.test.toString().includes('svg')) {
+    if (config.module?.rules !== undefined) {
+      config.module.rules = config.module.rules.map((rule) => {
+        if (
+          rule &&
+          rule !== '...' &&
+          rule.test instanceof RegExp &&
+          rule.test.toString().includes('svg')
+        ) {
           return { ...rule, exclude: /\.svg$/i }
         }
         return rule
-      }
-      )
+      })
       config.module.rules.push({
         test: /\.svg$/i,
         use: ['@svgr/webpack']
@@ -46,13 +50,15 @@ const config: StorybookConfig = {
 
     config.module?.rules?.push(buildCssLoader(true))
 
-    config.plugins?.push(new DefinePlugin({
-      __IS_DEV__: true,
-      __API__: true,
-      __PROJECT__: JSON.stringify('storybook')
-    }))
+    config.plugins?.push(
+      new DefinePlugin({
+        __IS_DEV__: true,
+        __API__: true,
+        __PROJECT__: JSON.stringify('storybook')
+      })
+    )
 
-    new TsconfigPathsPlugin({extensions: config.resolve?.extensions})  /* eslint-disable-line */
+    new TsconfigPathsPlugin({extensions: config.resolve?.extensions,}) /* eslint-disable-line */
     /* config.resolve?.extensions?.push('.ts', '.tsx') */
 
     return config

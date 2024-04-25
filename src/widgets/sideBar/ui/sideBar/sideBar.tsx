@@ -6,6 +6,8 @@ import cls from './sideBar.module.scss'
 import { ButtonTheme, Button, ButtonSize } from 'shared/ui/button/button'
 import { SideBarItem } from '../SideBarItem/SideBarItem'
 import { SidebarItemsList } from 'widgets/sideBar/model/items'
+// import { getUserAuthData } from 'entities/User'
+// import { useSelector } from 'react-redux'
 
 interface SidebarProps {
   className?: string
@@ -15,6 +17,9 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
   const [collapsed, setCollapsed] = useState<boolean>(false)
   const { className = '' } = props
   const onToggle = () => { setCollapsed(!collapsed) }
+
+  // const auth = useSelector(getUserAuthData)
+  // SidebarItemsList.filter(el => (!el.authOnly || el.authOnly === true))
 
   return (
     <div

@@ -4,6 +4,7 @@
   "description": "Pet_project",
   "main": "index.js",
   "cssModules.camelCase": true,
+  "proxy":"http://localhost:8000",
   "scripts": {
     "test:ui": "npx loki test",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
@@ -13,7 +14,7 @@
     "test:ui:ok": "npx loki approve",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "start": "webpack serve --env port=3000",
-    "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
+    "start:dev": "concurrently \"npm run start\" \"npm run start:dev:server\"",
     "start:dev:server": "node ./json-server/index.js ",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
