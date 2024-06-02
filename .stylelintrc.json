@@ -6,6 +6,7 @@
     "string-quotes": "single",
     "declaration-colon-space-before": "never",
     "declaration-colon-space-after": "always",
-    "value-keyword-case": null
+    "value-keyword-case": null,
+    "max-line-length": 150
   }
 }

@@ -8,7 +8,7 @@ export function RequireAuth ({ children }: { children: JSX.Element }) {
   const auth = useSelector(getUserAuthData)
   const navigate = useNavigate()
 
-  if (!auth) {
+  if (auth == null) {
     navigate(RoutePath.main)
     return <MainPage />
   }

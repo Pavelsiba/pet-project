@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 const meta = {
-  title: 'shared/ArticleDetailsPage',
+  title: 'pages/ArticleDetailsPage',
   component: ArticleDetailsPage
 
 } satisfies Meta<typeof ArticleDetailsPage>
